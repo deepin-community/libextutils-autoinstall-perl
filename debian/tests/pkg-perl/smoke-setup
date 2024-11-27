@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# workaround for #752930
+# 0) create ~/.cpan/CPAN/MyConfig.pm ourselves before EU::AutoInstall
+#    tries to do it and fails horribly in a loop in the install_help
+#    question
+# 1) "preseed" exactly this install_help question, otherwise the default
+#    'local::lib' is chosen and CPAN.pm goes out hunting
+perl -MCPAN -e '$CPAN::Config = {"install_help" => q[manual]}; CPAN::Shell->mkmyconfig' </dev/null
+

@@ -1,5 +1,152 @@
-template-repository (1.0-1) unstable; urgency=medium
+libextutils-autoinstall-perl (0.64-2) unstable; urgency=medium
 
-  * Initial release
+  [ gregor herrmann ]
+  * Unify HOME in autopkgtest across packages.
+  * Honour DEB_BUILD_OPTIONS=nocheck in debian/rules.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
+
+  [ Laurent Baillet ]
+  * fix lintian file-contains-trailing-whitespace warning
+
+  [ gregor herrmann ]
+  * debian/*: replace ADTTMP with AUTOPKGTEST_TMP.
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 9 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright).
+  * Add missing build dependency on libmodule-install-perl.
+
+  [ gregor herrmann ]
+  * debian/watch: use uscan version 4.
+  * Set Rules-Requires-Root: no.
+
+  [ Helmut Grohne ]
+  * Mark libextutils-autoinstall-perl Multi-Arch: foreign.
+    (Closes: #980530)
+
+  [ gregor herrmann ]
+  * Update years of packaging copyright.
+  * Declare compliance with Debian Policy 4.5.1.
+  * Don't use inc/ during build.
+  * Reuse debian/tests/pkg-perl/smoke-setup for build tests instead of
+    duplicating the code in debian/rules.
+  * Simplify debian/tests/pkg-perl/smoke-setup.
+    We don't need to set urllist anymore, as that happens since perl 5.20.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 20 Jan 2021 17:52:14 +0100
+
+libextutils-autoinstall-perl (0.64-1.1) unstable; urgency=medium
+
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
+
+ -- Holger Levsen <holger@debian.org>  Sat, 02 Jan 2021 18:52:41 +0100
+
+libextutils-autoinstall-perl (0.64-1) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Use HTTPS transport protocol for Vcs-Git URI
+
+  [ gregor herrmann ]
+  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
+
+  [ Angel Abad ]
+  * Team upload.
+  * New upstream version 0.64
+  * Bump debhelper compat level to 9.
+  * Add /me to Uploaders.
+  * Declare compliance with Debian policy 3.9.8.
+  * debian/copyright: Update years.
+  * Add debian/upstream/metadata.
+
+ -- Angel Abad <angel@debian.org>  Sat, 08 Oct 2016 18:49:15 +0200
+
+libextutils-autoinstall-perl (0.63-4) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-Browser URL to cgit web frontend
+
+  [ Niko Tyni ]
+  * Adjust autopkgtest setup to prevent a busy loop in CPAN configuration
+    (Closes: #806142)
+  * Declare the package autopkgtestable
+
+ -- Niko Tyni <ntyni@debian.org>  Sat, 28 Nov 2015 20:41:42 +0200
+
+libextutils-autoinstall-perl (0.63-3) unstable; urgency=medium
+
+  * debian/rules: create CPAN config before running test suite.
+    (Closes: #752930)
+  * Update years of packaging copyright.
+  * Declare compliance with Debian Policy 3.9.5.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 21 Jul 2014 21:50:08 +0200
+
+libextutils-autoinstall-perl (0.63-2) unstable; urgency=low
+
+  * Take over for the Debian Perl Group with maintainer's permission
+    (https://lists.debian.org/debian-perl/2013/08/msg00050.html)
+  * debian/control: Added: Vcs-Git field (source stanza); Vcs-Browser
+    field (source stanza); Homepage field (source stanza). Changed:
+    Maintainer set to Debian Perl Group <pkg-perl-
+    maintainers@lists.alioth.debian.org> (was: Bastian Blank
+    <waldi@debian.org>); Bastian Blank <waldi@debian.org> moved to
+    Uploaders.
+  * debian/watch: use metacpan-based URL.
+  * Switch to "3.0 (quilt)" source format.
+  * Use debhelper 8 and tiny dh(1) debian/rules.
+  * Convert debian/copyright to Copyright Format 1.0.
+  * Drop version from perl build dependency.
+  * Add /me to Uploaders.
+  * Update short/long description.
+  * Declare compliance with Debian Policy 3.9.4.
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 13 Sep 2013 16:14:30 +0200
+
+libextutils-autoinstall-perl (0.63-1) unstable; urgency=low
+
+  * New upstream version.
+  * Use external orig.
+
+ -- Bastian Blank <waldi@debian.org>  Sun, 20 Apr 2008 20:58:37 +0200
+
+libextutils-autoinstall-perl (0.61-1.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix FTBFS with Perl 5.10.  Closes: #467788
+
+ -- Mark Hymers <mhy@debian.org>  Sat, 05 Apr 2008 21:08:58 +0100
+
+libextutils-autoinstall-perl (0.61-1.1) unstable; urgency=medium
+
+  * NMU from the Helsinki BSP
+  * Medium urgency for RC bugfix
+  * Force the build-time test to stay inside the build tree. Closes: #395857
+  * Give a more useful error message when permissions are insufficient.
+    Closes: #382843. Thanks to Ingo Wichmann for the patch.
+
+ -- Steve McIntyre <93sam@debian.org>  Sat, 11 Nov 2006 14:53:32 +0200
+
+libextutils-autoinstall-perl (0.61-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Bastian Blank <waldi@debian.org>  Thu, 21 Apr 2005 22:04:49 +0200
+
+libextutils-autoinstall-perl (0.59-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Bastian Blank <waldi@debian.org>  Thu, 29 Apr 2004 19:56:24 +0200
+
+libextutils-autoinstall-perl (0.56-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Bastian Blank <waldi@debian.org>  Sat,  3 Apr 2004 23:00:20 +0200
